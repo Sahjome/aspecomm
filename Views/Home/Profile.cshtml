@@ -1,0 +1,171 @@
+﻿
+@using EWebStore.Models
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    if (Session["UserDetails"] is null)
+    {
+        Route route;
+       // route. 
+    }
+}
+(Session["UserDetails"] as UserDetails)
+
+
+<div class="ftco-blocks-cover-1">
+    <div class="ftco-cover-1 overlay innerpage" style="background-image: url('../images/blackcars.jpg')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h1>About Us</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="site-section bg-light">
+    <div class="container">
+
+        @* ============  Profile Preview begin ============= *@
+        <div class="featureboard mt-5">
+            <div><h4 class="text-center">Personal Details</h4></div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <span>Full Name: </span> @((Session["UserDetails"] as UserDetails).Firstname) @((Session["UserDetails"] as UserDetails).Lastname)
+                            </p>
+                            <p>
+                                <span>Email: </span> @((Session["UserDetails"] as UserDetails).Email))
+                                <button type="button" class="btn btn-link btn-xs">
+                                    <span class="fa fa-plus-circle"> </span>
+                                </button>
+                            </p>
+                            <p>
+                                <span>Phone 2: </span> @((Session["UserDetails"] as UserDetails).Phone))
+                                <button type="button" class="btn btn-link btn-xs">
+                                    <span class="fa fa-times-circle-o"> </span>
+                                </button>
+                                <button type="button" class="btn btn-link btn-xs">
+                                    <span class="fa fa-pencil"> </span>
+                                </button>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <span>Username: </span> @((Session["UserDetails"] as UserDetails).Username))
+                            </p>
+                            <p>
+                                <span>Phone: </span> +(021) 956 789123
+                                <button type="button" class="btn btn-link btn-xs">
+                                    <span class="fa fa-plus-circle"> </span>
+                                </button>
+                            </p>
+                            <p>
+                                <span>Sex: </span> @((Session["UserDetails"] as UserDetails).Sex))
+                                <button type="button" class="btn btn-link btn-xs">
+                                    <span class="fa fa-pencil"> </span>
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <hr />
+                        <button type="button" class="btn btn-link btn-xs pull-right">
+                            <span class="fa fa-plus-circle"> </span>
+                        </button>
+                        <button type="button" class="btn btn-link btn-xs pull-right">
+                            <span class="fa fa-pencil"> </span>
+                        </button>
+                        <button type="button" class="btn btn-link col-md-1 btn-xs pull-right">
+                            <span class="fa fa-times-circle-o"> </span>
+                        </button>
+                        <span class="col-md-8"><span>Address 1: </span> 55, London Parkway, London, EN, UK. </span>
+                    </div>
+                    <div>
+                        <hr />
+                        <button type="button" class="btn btn-link btn-xs pull-right">
+                            <span class="fa fa-pencil"> </span>
+                        </button>
+                        <button type="button" class="btn btn-link col-md-1 btn-xs pull-right">
+                            <span class="fa fa-times-circle-o"> </span>
+                        </button>
+                        <span class="col-md-8"><span>Address 2: </span> East-Wing by Middleton, Ireland, UK. </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @* ============  Profile Preview end ============= *@
+
+        @* ============  Profile Edit begin ============= *@
+        <div class="featureboard mt-5 collapse" id="editDetails">
+            <div><h4 class="text-center mb-3">Edit Details</h4></div>
+            <form role="form" class="col-md-10">
+                <div class="form-group">
+                    <div class="form-inline">
+                        <label class="col-sm-6 control-label">Firstname</label>
+                        <input type="text" value="Firstname" disabled id="c-name" class="col-sm-6 form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-inline">
+                        <label class="col-sm-6 control-label">Lastname</label>
+                        <input type="text" value="Lastname" disabled id="" class="col-sm-6 form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-inline">
+                        <label class="col-sm-6 control-label">Username</label>
+                        <input type="text" value="Username" disabled id="country" class="col-sm-6 form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-inline">
+                        <label class="col-sm-6 control-label">Phone</label>
+                        <input type="text" value="Username" disabled id="country" class="col-sm-6 form-control">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                </div>
+            </form>
+        </div>
+        @* ============  Profile Edit end ============= *@
+
+        @* ============  change Password begin ============= *@
+
+        <div class="featureboard mt-5">
+            <div><h4 class="text-center mb-3">Change Password</h4></div>
+            <form role="form" action="~/Home/Update" method="post" class="col-md-10">
+                <div class="form-group">
+                    <div class="form-inline">
+                        <label class="col-sm-6 control-label">Old Password</label>
+                        <input type="password" placeholder=" " id="addr1" class="col-sm-6 form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-inline">
+                        <label class="col-sm-6 control-label">New Password</label>
+                        <input type="password" placeholder=" " id="addr2" class="col-sm-6 form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-inline">
+                        <label class="col-sm-6 control-label">Confirm Password</label>
+                        <input type="password" placeholder=" " id="phone" class="col-sm-6 form-control">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                </div>
+            </form>
+        </div>
+        @* ============  change Password end ============= *@
+    </div>
+</div>

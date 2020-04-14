@@ -1,0 +1,793 @@
+﻿
+
+<div class="ftco-blocks-cover-1">
+    <div class="ftco-cover-1 overlay innerpage" style="background-image: url('../Images/un5.jpg')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h1>Car Rental &amp; Sales</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section bg-light">
+    <div class="container">
+
+        <div class="heading mr-auto"><h1 class="text-uppercase">@ViewBag.Title</h1></div>
+        <div class="row">
+            <div class="col-sm-2 col-md-4">
+                <div class="row align-items-center">
+                    <div class="backgroundform">
+                        <form action="~/Home/search" method="post">
+                            <h4>Search</h4>
+                            <div class="form-group">
+                                <select class="form-control" name="brand">
+                                    <option disabled="" selected="" value="">Brand</option>
+                                </select>
+
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-control" name="model">
+                                    <option selected="" disabled="" value="">Model</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-6 col-sm-6">
+                                    <select class="form-control" name="yearmin">
+                                        <option selected="" disabled="" value="">Year: From</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <select class="form-control" name="yearmax">
+                                        <option selected="" disabled="" value="">Year: To</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-6 col-sm-6">
+                                    <select class="form-control" name="pricemin">
+                                        <option selected="" disabled="" value="">Price: From</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <select class="form-control" name="pricermax">
+                                        <option selected="" disabled="" value="">Price: To</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="text-center"><button type="submit" class="btn btn-primary text-center">Search</button></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-8">
+                <nav class="product-filter">
+                    <div class="sort ml-auto">
+                        <div class="collection-sort mr-2">
+                            <label>Filter by:</label>
+                            <select id="filter" class="form-control">
+                                <option selected="" value="brand">Brand</option>
+                                <option value="mileage">Mileage</option>
+                                <option value="model">Model</option>
+                                <option value="type">Type</option>
+                            </select>
+                        </div>
+
+                        <div class="collection-sort mr-3">
+                            <label>Sort by:</label>
+                            <select id="sort" class="form-control">
+                                <option value="l2h">Price (low to high)</option>
+                                <option value="h2l">Price(high to low)</option>
+                                <option value="recent">Most Recent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </nav>
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_2.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_3.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_2.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_3.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_2.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_3.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_2.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_3.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--- if similar tempdata is not null begin -->
+                    <div class="col-12">
+                        <div class="backgroundform mt-2 mb-3"><h4>Similar Vehicles</h4></div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_2.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_3.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+                            <a href="#"><img src="/Images/img_2.jpg" alt="Image" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price"><span>₦ 50,000/</span>day</div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Doors</span>
+                                        <span class="spec">4</span>
+                                    </li>
+                                    <li>
+                                        <span>Seats</span>
+                                        <span class="spec">5</span>
+                                    </li>
+                                    <li>
+                                        <span>Transmission</span>
+                                        <span class="spec">Automatic</span>
+                                    </li>
+                                    <li>
+                                        <span>Minium age</span>
+                                        <span class="spec">18 years</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--- if similar tempdata is not null end -->
+
+                    <div class="col-12">
+                        <span class="p-3">1</span>
+                        <a href="#" class="p-3">2</a>
+                        <a href="#" class="p-3">3</a>
+                        <a href="#" class="p-3">4</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

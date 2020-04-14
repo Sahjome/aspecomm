@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Vehicle Reports";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="showback">
+        <div><h2 class="text-center">Vehicles Reports</h2></div>
+        <div class="col-lg-12 col-md-12 mb-md-3">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 mb-md-2">
+                    <div class="form-inline pull-left">
+                        <label class="col-sm-4 control-label">Type: </label>
+                        <select id="amount" class="form-control col-xs-6">
+                            <option value="all" selected="">All</option>
+                            <option value="sold">Sold</option>
+                            <option value="rented">Rental</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 mb-md-2">
+                    <div class="form-inline pull-right">
+                        <label class="col-sm-4 control-label">month: </label>
+                        <select class="col-sm-8 form-control">
+                            <option value="January" selected="">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="March">March</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 pull-left mb-md-2">
+                    <div class="form-inline pull-left">
+                        <label class="col-sm-6 control-label">rows/page: </label>
+                        <select id="amount" class="form-control col-xs-6">
+                            <option value="10" selected="">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 mb-md-2">
+                    <div class="form-inline pull-right">
+                        <label class="col-sm-4 control-label">Search:</label>
+
+                        <input class="col-sm-8 form-control" id="filter" onkeyup="myFunction()" placeholder="search...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-hover" id="tablec">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Vehicle</td>
+                    <td>Username</td>
+                    <td>Ordered Date</td>
+                    <td>Due Date</td>
+                    <td>Progress</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Jitender Citander</td>
+                    <td>Jiteok</td>
+                    <td>@DateTime.Now.AddDays(-7).ToLongDateString()</td>
+                    <td>@DateTime.Now.AddDays(3).ToLongDateString()</td>
+                    <td>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                <span class="sr-only">45% Complete</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Frencais Oliviere</td>
+                    <td>Frencais3</td>
+                    <td>@DateTime.Now.AddDays(-5).ToLongDateString()</td>
+                    <td>@DateTime.Now.AddDays(5).ToLongDateString()</td>
+                    <td>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                <span class="sr-only">20% Complete</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

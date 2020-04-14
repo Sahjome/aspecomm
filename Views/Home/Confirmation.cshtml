@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Confirmation";
+}
+
+
+<section class="page-title" style="background: url('../Images/img_7_resized.jpg') no-repeat; background-size:cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a href="#" class="text-sm letter-spacing text-white text-uppercase font-weight-bold">Home</a></li>
+                    <li class="list-inline-item"><span class="text-white">|</span></li>
+                    <li class="list-inline-item"><a href="#" class="text-color text-uppercase text-sm letter-spacing">Confirmation</a></li>
+                </ul>
+                <h1 class="text-lg text-white mt-2">Confirmation</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container mt-5">
+    <div class="backgroundform">
+        <div class="featureboard">
+            <div><h5 class="text-center">Confirmation</h5></div>
+            <div>
+            </div>
+            <div class="container-fluid text-center">
+                <div class=""><img src="~/Images/ok.svg" width="100" height="120" /></div>
+                <div><h4>Transaction Successful.</h4></div>
+                <p>Please kindly fill the survey form <a href="#surveyModal" data-toggle="modal" class="btn-link">here</a> to help us serve you better.</p>
+                <div class="row align-content-center justify-content-between">
+                    <div class="col-md-6 text-right">
+                        @*<iframe src="https://www.facebook.com/plugins/share_button.php?href=Http%3A%2F%2Flocalhost%3A443%2Fhome%2Fpayment&layout=button&size=large&width=74&height=28&appId"></iframe>*@
+                        <a href="#" type="button" class="btn btn-primary">Share</a>
+                    </div><div class="col-md-6 text-left">
+                        <a class="btn btn-primary" href="/">Done</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---- Survey modal begin -->
+<div class="modal fade" style="overflow:hidden" id="surveyModal" tabindex="-1" role="dialog" aria-labelledby="surveyModalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="surveyModalTitle">Survey</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="~/Home/survey" method="post">
+                    <div class="form-group">
+                        <label class="control-label">How did you hear about Us? </label>
+                        <select name="" class="form-control">
+                            <option value="" selected disabled>--Select--</option>
+                            <option value="">Search engine</option>
+                            <option value="">A friend</option>
+                            <option value="">Social media</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-check-label col-sm-3">Will you recommend Us? </label>
+                        <div class="form-group col">
+                            <label class="mr-3">
+                                <input type="radio" class="mr-1" value="yes" name="recommend"> Yes
+                            </label>
+                            <label class="mr-3">
+                                <input type="radio" class="mr-1" value="no" name="recommend"> No
+                            </label>
+                            <label class="mr-3">
+                                <input type="radio" class="mr-1" value="I don't know" name="recommend"> I don't know
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-check-label col-sm-3">Will you visit again? </label>
+                        <div class="form-group col">
+                            <label class="mr-3">
+                                <input type="radio" class="mr-1" value="yes" name="recommend"> Yes
+                            </label>
+                            <label class="mr-3">
+                                <input type="radio" class="mr-1" value="no" name="recommend"> No
+                            </label>
+                            <label class="mr-3">
+                                <input type="radio" class="mr-1" value="I don't know" name="recommend"> I don't know
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Please leave a review </label>
+                        <textarea type="text" maxlength="60" placeholder="60 characters max.." class="form-control col-sm-6" name="remark"></textarea>
+                    </div>
+                    <button type="submit" style="height: 35px;" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---- Survey modal end -->

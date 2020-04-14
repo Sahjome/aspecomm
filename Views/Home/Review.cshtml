@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Review";
+}
+
+<h2>Review</h2>
+
+<div class="container-fluid">
+
+    <h2 class="text-center text-uppercase">Product Review</h2>
+    <br />
+    <p class="text-uppercase">
+        Thank You for completing the order, we hope you found comfort from our product.
+    </p>
+    @*<%-- <p class="text-uppercase">
+        Before leaving we implore to give your review on the product after at least a week
+        of use as we use these reviews to better our market and products.
+    </p>--%>*@
+
+    <p class="text-uppercase">
+        Please leave a review about the product so that others can be served better as well as improve our services
+        towards giving better comfort.
+    </p>
+    <br />
+
+    <div class="well">
+
+        <h3 class="text-center">Review Form</h3>
+
+        <div class="form-group">
+            <label class="control-label">Car Type: </label>
+            <select ID="carType" class="form-control" TabIndex="1" >
+                <option selected value="" disabled>--Select--</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Car Brand: </label>
+            <select ID="carBrand" class="form-control" TabIndex="2">
+                <option selected value="" disabled>--Select--</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Car Model: </label>
+            <select ID="carModel" class="form-control" TabIndex="3">
+                <option selected value="" disabled>--Select--</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="col">
+                <label class="control-label">Please give a rating over 10:</label>
+                <span><strong id="point"></strong></span>
+            </div>
+            <div class="col">
+                @*<input ID="rating" type="range" class="custom-range" TabIndex="4" min="1" step="0.5" max=10 />*@
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold blue-text mr-2 mt-1">1</span>
+                    <form class="range-field w-50">
+                        <input id="ratings" class="custom-range border-0" type="range" min="1" max="10" />
+                    </form>
+                    <span class="font-weight-bold blue-text ml-2 mt-1">10</span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button ID="SurveyBtn" class="btn btn-secondary" TabIndex="5" style="background-color:#9d9d9d;">Submit</button>
+        </div>
+    </div>
+</div>

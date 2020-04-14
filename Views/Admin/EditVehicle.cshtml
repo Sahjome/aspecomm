@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "Edit Vehicle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+
+    <form class="form-horizontal mt-3" action="/Admin/add" method="post">
+        <div class="showback">
+            <div><h2 class="text-center">Edit Vehicle</h2></div>
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-8">
+                    <div class="form-group form-inline">
+                        <label class="col-sm-2 control-label">Brand:</label>
+                        <div class="col-sm-4"><input type="text" name="brand" class="form-control"></div>
+                    </div>
+                    <div class="form-inline form-group">
+                        <label class="col-sm-2 control-label">Model:</label>
+                        <div class="col-sm-4"><input type="text" name="model" class="form-control"></div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="col-sm-2 control-label">Category:</label>
+                        <div class="col-sm-4"><input type="text" name="category" class="form-control"></div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="col-sm-2 control-label">Year:</label>
+                        <div class="col-sm-4"><input type="number" name="year" class="form-control"></div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="col-sm-2 control-label">Sale Price:</label>
+                        <div class="col-sm-4"><input type="number" name="sale" class="form-control"></div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="col-sm-2 control-label">Rental Price:</label>
+                        <div class="col-sm-4"><input type="number" name="rent" class="form-control"></div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="col-sm-2 control-label">Main Picture:</label>
+                        <div class="col-sm-6"><input type="file" name="previews" class="form-control-file" multiple=""></div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm backgroundform">
+
+                    <div class="item-1">
+                        <img src="/Images/img_1.jpg" alt="Image" class="img-fluid">
+                        <div class="item-1-contents">
+                            <div class="text-center m-2"><h4>Range Rover S64 Coupe</h4></div>
+                            <ul class="specs">
+                                <li>
+                                    <span>Sale:</span>
+                                    <span class="spec">₦ 50,000</span>
+                                </li>
+                                <li>
+                                    <span>Rental</span>
+                                    <span class="spec">₦ 50,000/day</span>
+                                </li>
+                                <li>
+                                    <span>Mileage</span>
+                                    <span class="spec">46,774</span>
+                                </li>
+                                <li>
+                                    <span>Steering</span>
+                                    <span class="spec">Left-Hand</span>
+                                </li>
+                                <li>
+                                    <span>Engine</span>
+                                    <span class="spec">Fuel</span>
+                                </li>
+                                <li>
+                                    <span>Doors</span>
+                                    <span class="spec">2</span>
+                                </li>
+                                <li>
+                                    <span>Transmission</span>
+                                    <span class="spec">Automatic</span>
+                                </li>
+                                <li>
+                                    <span>Seats</span>
+                                    <span class="spec">4</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--- Features section begin -->
+        <div class="showback">
+            <div class="col-lg-12 col-md-12">
+                <div class="m-md-3"><h4 class="text-center">Features</h4></div>
+                <div class="row">
+
+                    <div class="col-lg-7 col-md-7 col-sm-8">
+                        <div class="form-group form-inline">
+                            <label class="col-sm-2 control-label">Mileage: </label>
+                            <div class="col-sm-3">
+                                <input type="number" name="mileage" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group form-inline">
+                            <label class="col-sm-2 control-label">Doors: </label>
+                            <div class="col-sm-3">
+                                <input type="number" name="door" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group form-inline">
+                            <label class="col-sm-2 control-label">Seats: </label>
+                            <div class="col-sm-3">
+                                <input type="number" name="seat" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm">
+                        <div class="form-group form-inline">
+                            <label class="col-sm-3 control-label">Transmission: </label>
+                            <div class="col-sm-3">
+                                <select name="transmission" class="form-control" required="">
+                                    <option value="" selected="" disabled="">--Select--</option>
+                                    <option value="auto">Automatic</option>
+                                    <option value="manual">Manual</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-inline">
+                            <label class="col-sm-3 control-label">Steering: </label>
+                            <div class="col-sm-3">
+                                <select name="steering" class="form-control" required="">
+                                    <option value="" selected="" disabled="">--Select--</option>
+                                    <option value="right">Right-Hand</option>
+                                    <option value="left">Left-Hand</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-inline">
+                            <label class="col-sm-3 control-label">Engine: </label>
+                            <div class="col-sm-3">
+                                <select name="engine" class="form-control" required="">
+                                    <option value="" selected="" disabled="">--Select--</option>
+                                    <option value="fuel">Fuel</option>
+                                    <option value="fuel">Diesel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Preview Pictures:</label>
+                    <div class="">
+                        <input type="file" name="previews" class="form-control-file" multiple="">
+                    </div>
+                    <small class="text-muted">upload multiple files here.</small>
+                </div>
+            </div>
+            <!--- Features section end -->
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,212 @@
+﻿@using EWebStore.Models
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>@ViewBag.Title</title>
+        <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="~/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="~/css/bootstrap.min.css">
+        <link href="../fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="~/css/style.css">
+
+    </head>
+
+    <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+        <div class="site-wrap" id="home-section">
+
+            <div class="site-mobile-menu site-navbar-target">
+                <div class="site-mobile-menu-header">
+                    <div class="site-mobile-menu-close mt-3">
+                        <span class="icon-close2 js-menu-toggle"></span>
+                    </div>
+                </div>
+                <div class="site-mobile-menu-body"></div>
+            </div>
+
+            <!----navbar begin -->
+            <header class="site-navbar site-navbar-target" role="banner">
+                <div class="container">
+                    <div class="row align-items-center position-relative">
+                        <div class="col-3 ">
+                            <div class="site-logo">
+                                <a href="~/Home/Index">Ayo Auto</a>
+                            </div>
+                        </div>
+                        <div class="col-9  text-right">
+                            <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
+                            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                                    <li><a href="~/Home/Index" class="nav-link">Home</a></li>
+                                    <li><a href="~/Home/Shop" class="nav-link">Cars</a></li>
+                                    <li><a href="~/Home/Services" class="nav-link">Services</a></li>
+                                    <li><a href="~/Home/About" class="nav-link">About</a></li>
+                                    <li><a href="~/Home/Contact" class="nav-link">Contact Us</a></li>
+                                    @if (Session["UserDetails"] == null)
+                                    {
+                                        <li><button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#loginModal">Login</button></li>
+                                        <li><button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#registrationModal">Sign Up</button></li>
+                                    }
+                                    else
+                                    {
+                                        <!-- user's name as a dropdown containing Account, Settings and Logout -->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle btn btn-outline-primary" href="#" id="account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                @((Session["UserDetails"] as UserDetails).Username)
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="account">
+                                              <a class="dropdown-item" href="~/Home/Profile">Profile</a>
+                                              <a class="dropdown-item" href="~/Home/Review">Catalogue</a>
+                                              <a class="dropdown-item" href="#">Settings</a>
+                                              <hr />
+                                              <a class="dropdown-item" href="~/Home/Logout">Logout</a>
+                                            </div>
+                                          </li>
+                                    }
+                                    <li><a href="~/Home/Cart" role="button" class="nav-link">Cart <span class="fa fa-shopping-cart">  <span class="badge badge-info"> 4</span></span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!----navbar end -->
+
+            <!----Login modal begin -->
+            <div class="modal fade" style="overflow:hidden" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="loginModalTitle">Login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="~/Home/Login" method="post">
+                                <div class="form-group" style="margin-top: -10px;">
+                                    <input type="email" class="form-control" name="email" style="height: 35px;" placeholder="Email" required>
+                                </div>
+                                <div class="form-group" style="margin-top: -10px;">
+                                    <input type="password" class="form-control" name="password" style="height: 35px;" placeholder="Password" required>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" style="height: 35px;" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----Login modal end -->
+            <!----Registration modal begin -->
+            <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registrationModalTitle">Sign Up</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="~/Home/Register" method="post">
+                                <h4>Register</h4>
+
+                                <div class="form-group row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <input type="text" name="firstname" class="form-control" required placeholder="FirstName">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input type="text" name="lastname" class="form-control" required placeholder="LastName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" required placeholder="Email">
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="form-check-label col-sm-3">Gender: </label>
+                                    <div class="form-group col">
+                                        <label class="mr-3">
+                                            <input type="radio" class="mr-1" name="sex" value="male"> Male
+                                        </label>
+                                        <label class="mr-3">
+                                            <input type="radio" class="mr-1" name="sex" value="female"> Female
+                                        </label>
+                                        <label class="mr-3">
+                                            <input type="radio" class="mr-1" name="sex" value="secret"> Not Say
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <input type="text" name="username" class="form-control" required placeholder="Username">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input type="number" name="phone" class="form-control" required placeholder="Phone">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <input type="password" name="password" class="form-control" required placeholder="Password">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input type="password" name="confirm" class="form-control" required placeholder="Confirm Password">
+                                    </div>
+                                </div>
+
+                                <button type="submit" style="height: 35px;" class="btn btn-primary">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----Registration modal end -->
+
+        </div>
+        
+        @if (ViewBag.msg != null)
+         {
+            <script type="text/javascript">
+                alert("@ViewBag.msg.Message");
+            </script>
+         }
+
+
+        @RenderBody()
+        <hr />
+
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                <div class="credits">
+                    Created with love for and By <a href="/">Ayo Auto</a>
+                </div>
+                <p>
+                    &copy; Copyrights @DateTime.Now.Year <strong>Ayo Auto</strong>. All Rights Reserved
+                </p>
+                <a href="inbox.html#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+
+        <script src="~/js/jquery-3.3.1.min.js"></script>
+        <script src="~/js/popper.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/owl.carousel.min.js"></script>
+        <script src="~/js/aos.js"></script>
+        <script src="~/js/main.js"></script>
+
+    </body>
+    </html>

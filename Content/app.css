@@ -1,0 +1,462 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    background-color: #f3f1f1;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    /*margin-left: 239px;*/
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: inherit;
+}
+
+/*fixed navbar
+.sticky-offset {
+    top: 36px;
+    position: sticky;
+}
+*/
+
+
+
+/*make circular image*/
+.circle {
+    border-radius: 70px;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 10px rgba(0,0,0,0.6);
+    -moz-box-shadow: 2px 10px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 2px 10px rgba(0,0,0,0.6);
+    justify-items: center;
+    margin-bottom: 10px;
+}
+
+.circle:hover{
+    background-color:#aaadac;
+}
+
+.fa {
+    font-size: 25px;
+}
+
+.checked {
+    color: orange;
+}
+
+.heading {
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+/**subtitute container class*/
+.sectioner {
+    width: initial;
+    padding: 20px;
+}
+
+/*sets the fixed sidebar for the search*/
+.sidebar {
+    /*height: 500px;
+    width: 249px;
+    z-index: 1;
+    position: fixed;
+    overflow-x: hidden;
+    padding: 20px 10px 10px;*/
+    background-color: #e1dcdc;
+}
+
+
+/* Make the image fully responsive */
+.carousel-inner img {
+    width: 100%;
+    /*height: 100%;*/
+}
+
+/*shopping grid*/
+.wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    /*grid-template-rows: auto auto auto;*/
+    grid-gap: 40px;
+    background-color: transparent;
+    color: #444;
+}
+
+.box {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+}
+
+/*w3school card*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    font-family: arial;
+    margin: 20px;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.ourServices {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 15px 0;
+    padding: .9375rem 0;
+    background: #f2f2f2;
+}
+
+.ourServices [class*=__row] {
+    margin: 0 auto;
+    max-width: 1024px;
+    max-width: 64rem;
+    width: 100%;
+}
+
+.ourServices .grid, .ourServices .serviceAcc__list, .ourServices h2 {
+    text-align: center;
+}
+
+.ourServices__row > div {
+    float: left;
+    width: 33.33333%;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    position: relative;
+}
+
+.services__icon img {
+    height: 60px;
+}
+
+.services__icon {
+    width: 100px;
+    width: 6.25rem;
+    height: 100px;
+    height: 6.25rem;
+    line-height: 90px;
+    background-color: #00a857;
+    border-radius: 50%;
+    font-size: 60px;
+    font-size: 3.75rem;
+    text-align: center;
+    display: inline-block;
+}
+
+.accountManage#manageAds .actionRow, .accountManage .menuRow, .grid, .serviceAcc__list {
+    margin: 0 auto;
+    max-width: 1024px;
+    max-width: 64rem;
+    width: 100%;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.list-head {
+    background-color: #9d9d9d;
+    width: 100px;
+    color: white;
+    font: bold;
+    font-size: 14px;
+}
+/*product page listing*/
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-info {
+    margin-top: auto;
+}
+
+.product-card {
+    flex: 1 16%;
+    padding: 2%;
+    /*display: flex;  so child elements can use flexbox stuff too! */
+}
+
+.product-image img {
+    max-width: 100%;
+}
+
+/*product page header*/
+.collection-sort {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.sort {
+    display: flex;
+}
+
+.product-filter h2 {
+    flex-grow: 1;
+}
+
+.product-filter {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+/*cart page 2 begin*/
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.category_block li:hover {
+    background-color: #007bff;
+}
+
+    .category_block li:hover a {
+        color: #ffffff;
+    }
+
+.category_block li a {
+    color: #343a40;
+}
+
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+
+.product_rassurance .list-inline {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.product_rassurance .list-inline li:hover {
+    color: #343a40;
+}
+
+.reviews_product .fa-star {
+    color: gold;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+footer {
+    background: #343a40;
+    /*padding: 40px;*/
+}
+
+footer a {
+    color: #f8f9fa !important
+}
+/*cart page 2 end*/
+
+/*cart page css begin*/
+.param {
+    margin-bottom: 7px;
+    line-height: 1.4;
+}
+
+.param-inline dt {
+    display: inline-block;
+}
+
+.param dt {
+    margin: 0;
+    margin-right: 7px;
+    font-weight: 600;
+}
+
+.param-inline dd {
+    vertical-align: baseline;
+    display: inline-block;
+}
+
+.param dd {
+    margin: 0;
+    vertical-align: baseline;
+}
+
+.shopping-cart-wrap .price {
+    color: #007bff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+    display: block;
+}
+
+var {
+    font-style: normal;
+}
+
+.media img {
+    margin-right: 1rem;
+}
+
+.img-sm {
+    width: 90px;
+    max-height: 75px;
+    object-fit: cover;
+}
+/*cart page css end*/
+
+/* Personal button decoration*/
+.myButton {
+    box-shadow: 0px 0px 5px 0px #f0f7fa;
+    /*background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);*/
+    background-color: #c6c3c3;
+    border-radius: 6px;
+    border: 1px solid #057fd0;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    text-align: center;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    height: 10px;
+    width: auto;
+    line-height: 10px;
+    margin-left: 17px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    text-shadow: 0px -1px 0px #5b6178;
+}
+
+    .myButton:hover {
+        background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+        background-color: #019ad2;
+    }
+
+    .myButton:active {
+        position: relative;
+        top: 1px;
+    }
+
+
+@media scren and (max-height:1110px) {
+    /*.sidebar {
+        padding-top: 10px;
+        position: sticky;
+        width: 250px;
+    }*/
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+
+    .aspform {
+        padding-left: 120px;
+        padding-right: 100px;
+    }
+
+    .aspinline {
+        margin-left: 20px;
+    }
+
+    .sidebar {
+        padding-top: 10px;
+        width: 370px;
+    }
+
+    #right {
+        margin-left: 150px;
+    }
+
+    #left {
+        margin-right: 100px;
+    }
+
+    #right, #left :hover {
+        opacity: 0.7;
+    }
+
+    /*responsive navbar float-right*/
+    .right-nav {
+        text-align: end;
+    }
+}
+
+/* Responsive: mobile phone screens*/
+@media screen and (max-width:450px) {
+    .sidebar {
+        padding-top: 10px;
+        position: sticky;
+    }
+
+    .sectioner {
+        padding: 10px;
+    }
+
+    .sticky-offset {
+        top: 0px;
+        position: static;
+    }
+
+    .product-card {
+        flex: 1 46%;
+    }
+}

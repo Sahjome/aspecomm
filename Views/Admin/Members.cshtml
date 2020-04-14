@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Members Statistics";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="showback">
+            <div><h2 class="text-center">Members Statistics</h2></div>
+            <div class="col-lg-12 col-md-12 mb-md-3">
+                <div class="row">
+                    <div class="col-md-9 col-sm-6 pull-left">
+                        <div class="form-inline">
+                            <label class="control-label">rows/page: </label>
+                            <select id="amount" class="form-control col-3" style="width:40px">
+                                <option value="10" selected="">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 text-right">
+                        <input class="form-control" id="filter" onkeyup="myFunction()" placeholder="search...">
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-hover" id="tablec">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Full Name</td>
+                        <td>Username</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>Amount</td>
+                        <td class="text-center">Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Jitender Citander</td>
+                        <td>Jiteok</td>
+                        <td>Jitendander@ymail.com</td>
+                        <td>(44)-7734-012</td>
+                        <td>192,015</td>
+                        <td class="text-center">
+                            <button class="btn btn-link" data-toggle="table" data-target=".details"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Frencais Oliviere</td>
+                        <td>Frencais3</td>
+                        <td>Frencais.O@mail.in</td>
+                        <td>(44)-0123-743</td>
+                        <td>19,215</td>
+                        <td class="text-center">
+                            <button class="btn btn-link" data-toggle="table" data-target=".details"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-left"><b>Total:</b></td>
+                        <td><b>211,230</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+           
+    </div>
+

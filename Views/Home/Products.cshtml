@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Products";
+}
+
+<div class="ftco-blocks-cover-1">
+    <div class="ftco-cover-1 overlay innerpage" style="background-image: url('../Images/mclaren-4535102_1280.jpg')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h1>Products</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!---- Review modal begin -->
+            <div class="modal fade" style="overflow:hidden" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="reviewModalTitle">Review</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="~/Home/Review" method="post">
+                                <div class="form-group mt-4">
+                                    <label class="control-label">Rate your order: /10</label>
+                                    <input type="range" value="1" step="1" max="10" min="1" class="form-control" name="rate" required>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <label class="control-label">Please write a review</label>
+                                    <textarea class="form-control col-md-10" name="review" maxlength="60" placeholder="60 characters max" rows="5" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" style="height: 35px;" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---- Review modal end -->
+
+
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="heading"><h1>Products</h1></div>
+
+        <div class="col-sm-12 col-md-12 col-md-offset-1 mt-3">
+            <table class="table table-hover table-responsive">
+                <thead>
+                    <tr>
+                        <th>Vehicle</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Date</th>
+                        <th>Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-sm-7 col-md-5">
+                            <div class="media">
+                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="/Images/img_1.jpg" style="width: 72px; height: 72px;"> </a>
+                                <div class="media-body">
+                                    <h6 class="media-heading">Brand name</h6>
+                                    <h6 class="media-heading"> Model name</h6>
+                                    <span><small>Type:</small> </span><span class="text-success"><small>Sale</small></span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                            <label class="control-label" name="quantity">3</label>
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>$4.87</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>03/01/2020</strong></td>
+                        <td class="col-sm-1 col-md-1">
+                            <button type="button" data-toggle="modal" data-target="#reviewModal" class="btn btn-link btn-xs">
+                                <span class="fa fa-pencil"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-7 col-md-5">
+                            <div class="media">
+                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="/Images/karl-kohler-Hf1rAKkfMAg-unsplash.jpg" style="width: 72px; height: 72px;"> </a>
+                                <div class="media-body">
+                                    <h6 class="media-heading">Brand name</h6>
+                                    <h6 class="media-heading"> Model name</h6>
+                                    <span><small>Type:</small> </span><span class="text-warning"><small>Rental</small></span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="col-md-1" style="text-align: center">
+                            <label class="control-label" name="quantity">2</label>
+                        </td>
+                        <td class="col-md-1 text-center"><strong>$4.99</strong></td>
+                        <td class="col-md-1 text-center"><strong>$9.98</strong></td>
+
+                        <td class="col-sm-1 col-md-1 text-center"><strong>03/01/2020</strong></td>
+                        <td class="col-md-1">
+                            <button type="button" class="btn btn-link btn-xs">
+                                <span class="fa fa-check"> </span>
+                            </button>
+                        </td>
+                    </tr>
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

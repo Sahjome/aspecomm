@@ -1,0 +1,289 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="ftco-blocks-cover-1">
+    <div class="ftco-cover-1 overlay innerpage" style="background-image: url('../Images/un5.jpg')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h1>Checkout</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <div class="panel panel-info backgroundform mb-3" id="address">
+                    <div class="panel-heading"><span><i class="fa fa-building"></i></span> Billing Address</div>
+                    <div class="panel-body mt-3">
+
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <h6><span>Adress Line:</span>1</h6>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="col-xs-12">
+
+                                    <span>no 6, westwood ave.,</span>
+                                </div>
+                                <div class="col-xs-12">
+                                    <small><span>Nottingham</span></small>
+                                </div>
+                                <div class="col-xs-12">
+                                    <small><span>London</span></small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                                <input type="radio" name="address" value="1">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <h6><span>Adress Line:</span>2</h6>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="col-xs-12">
+
+                                    <span>no 6, westwood ave.,</span>
+                                </div>
+                                <div class="col-xs-12">
+                                    <small><span>Nottingham</span></small>
+                                </div>
+                                <div class="col-xs-12">
+                                    <small><span>London</span></small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                                <input type="radio" name="address" value="1">
+                            </div>
+                        </div><hr><div class="panel-heading m-2" style="background-color:grey">
+                            <span>New Address</span>
+                            <span class="fa fa-plus-circle pull-right collapsed" data-target="#newAddress" data-toggle="collapse" aria-expanded="false"></span>
+                        </div><form class="form-horizontal collapse" id="newAddress" style="">
+
+                            <div class="form-group">
+
+                                <div class="form-group">
+
+
+                                    <div class="form-group row">
+
+                                        <div class="col-md-6">
+
+
+                                            <label class="form-label">First Name:</label><input type="text" class="form-control" name="fname">
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <label class="form-label">Last Name:</label><input type="text" class="form-control" name="lname">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Phone:</label>
+                                <input type="number" class="form-control" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Address:</label>
+                                <input type="text" class="form-control" name="addressline">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">City:</label>
+                                <input type="text" class="form-control" name="city">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">State:</label>
+                                <input type="text" class="form-control" name="state">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">ZIp/Postal Code:</label>
+                                <input type="text" class="form-control" name="code">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="panel panel-info backgroundform mt-3" id="cardInfo">
+                    <div class="panel-heading"><span><i class="fa fa-lock"></i></span> Secure Payment</div>
+                    <div class="panel-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <label class="form-label">Card Type:</label>
+                                <select id="CreditCardType" name="CreditCardType" class="form-control">
+                                    <option default="" selected="" value="">--Select--</option>
+                                    <option value="visa">Visa</option>
+                                    <option value="mastercard">MasterCard</option>
+                                    <option value="express">American Express</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Credit Card Number:</label>
+                                <input type="number" class="form-control" name="card_number">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">CVV:</label>
+                                <input type="number" class="form-control" name="cvv">
+                            </div>
+                            <div class="form-group">
+
+
+                                <label><strong>Expiration Date:</strong></label>
+                                <div class="form-group row">
+
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="month">
+                                            <option value="">Month</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="year">
+                                            <option value="">Year</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <label>Pay secure using your credit card.</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="d-flex">
+                                        <ul class="cards list-inline mx-auto justify-content-center">
+                                            <li class="visa hand list-inline-item">Visa</li>
+                                            <li class="mastercard hand list-inline-item">MasterCard</li>
+                                            <li class="amex hand list-inline-item">Amex</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="panel panel-info backgroundform mb-3" id="cart">
+                    <div class="panel-heading">Review Order</div>
+                    <div class="panel-body mt-3">
+
+
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg">
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="col-xs-12">Product name</div>
+                                <div class="col-xs-12"><small>Quantity:<span>1</span></small></div>
+                                <div class="col-xs-12"><small>Type:<span>Sale</span></small></div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                                <h6><span>$</span>25.00</h6>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-3">
+                                <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg">
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <div class="col-xs-12">Product name</div>
+                                <div class="col-xs-12"><small>Quantity:<span>1</span></small></div>
+                                <div class="col-xs-12"><small>Type:<span>Sale</span></small></div>
+                            </div>
+                            <div class="col-sm-3 col-xs-3 text-right">
+                                <h6><span>$</span>25.00</h6>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-3">
+                                <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg">
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <div class="col-xs-12">Product name</div>
+                                <div class="col-xs-12"><small>Quantity:<span>1</span></small></div>
+                                <div class="col-xs-12"><small>Type:<span>Rental</span></small></div>
+                            </div>
+                            <div class="col-sm-3 col-xs-3 text-right">
+                                <h6><span>$</span>5.00</h6>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <strong>Subtotal</strong>
+                                <div class="pull-right"><span>$</span><span>200.00</span></div>
+                            </div>
+                            <div class="col-xs-12">
+                                <small>Shipping</small>
+                                <div class="pull-right"><span>-</span></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <strong>Order Total</strong>
+                                <div class="pull-right"><span>$</span><span>150.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
