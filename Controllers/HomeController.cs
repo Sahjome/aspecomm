@@ -21,266 +21,7 @@ namespace EWebStore.Controllers
             }
             return View();
         }
-
-        [HttpPost]
-        public ActionResult Register()
-        {
-            MySqlConnection con = new MySqlConnection(cs);
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand("spRegister", con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("CUSTOMER_ID", DBNull.Value);
-                cmd.Parameters.AddWithValue("FIRSTNAME", Request.Form["firstname"]);
-                cmd.Parameters.AddWithValue("LASTNAME", Request.Form["lastname"]);
-                cmd.Parameters.AddWithValue("USERNAME", Request.Form["username"]);
-                cmd.Parameters.AddWithValue("PASSWRD", Request.Form["password"]);
-                cmd.Parameters.AddWithValue("EMAIL", Request.Form["email"]);
-                cmd.Parameters.AddWithValue("PHONE", Request.Form["phone"]);
-                cmd.Parameters.AddWithValue("SEX", Request.Form["sex"]);
-                con.Open();
-                var cron = cmd.ExecuteNonQuery();
-                if (cron > 0)
-                {
-                    var msg = new Messages
-                    {
-                        Message = "Registration Successful. Please login.",
-                        type = "success"
-                    };
-                    TempData["alertMessage"] = msg;
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    var msg = new Messages
-                    {
-                        Message = "Registration failed. Please Try Again.",
-                        type = "failed"
-                    };
-                    TempData["alertMessage"] = msg;
-                    return RedirectToAction("Index");
-                }
-
-            }
-            catch (Exception)
-            {
-                var msg = new Messages
-                {
-                    Message = "Registration failed. Please Try Again.",
-                    type = "error"
-                };
-                TempData["alertMessage"] = msg;
-                return RedirectToAction("Index");
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
-        [HttpPost]
-        public ActionResult Login(string email, string password)
-        {
-            //ID, Username, Firstname, Lastname, Email, Phone, Sex, Trans_ID
-            try
-            {
-                MySqlConnection con = new MySqlConnection(cs);
-                MySqlCommand cmd = new MySqlCommand("spLogin", con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("ENTRY", email);
-                cmd.Parameters.AddWithValue("PASSWRD", password);
-                con.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    string firstColumn = reader.GetName(0).ToString();
-                    if (firstColumn == "MSG")
-                    {
-                        var messages = new Messages
-                        {
-                            Message = "Incorrect Login Credentials.",
-                            type = "Error"
-                        };
-                        TempData["alertMessage"] = messages;
-                        return RedirectToAction("Index");
-                    }
-                    else if (firstColumn == "Role")
-                    {
-                        var user = new UserDetails()
-                        {
-                            ID = int.Parse(reader["ID"].ToString()),
-                            Role = reader["Role"].ToString(),
-                            Username = reader["Username"].ToString(),
-                            Lastname = reader["Lastname"].ToString(),
-                            Firstname = reader["Firstname"].ToString(),
-                            Email = reader["Email"].ToString(),
-                            Phone = long.Parse(reader["Phone"].ToString()),
-                            Sex = reader["Sex"].ToString(),
-                            Trans_ID = reader["Trans_ID"].ToString()
-                        };
-                        Session["UserDetails"] = user;
-                        return RedirectToAction("Index", "Admin");
-                    }
-                    else if (firstColumn == "ID")
-                    {
-                        var user = new UserDetails()
-                        {
-                            ID = int.Parse(reader["ID"].ToString()),
-                            Username = reader["Username"].ToString(),
-                            Lastname = reader["Lastname"].ToString(),
-                            Firstname = reader["Firstname"].ToString(),
-                            Email = reader["Email"].ToString(),
-                            Phone = long.Parse(reader["Phone"].ToString()),
-                            Sex = reader["Sex"].ToString(),
-                            Trans_ID = reader["Trans_ID"].ToString()
-                        };
-                        Session["UserDetails"] = user;
-                        return RedirectToAction("Index", "Home");
-                    } 
-                }
-
-                var message = new Messages
-                {
-                    Message = "Error Please try again.",
-                    type = "Error"
-                };
-                TempData["alertMessage"] = message;
-                return RedirectToAction("Index");
-             
-            }
-            catch (Exception)
-            {
-                var message = new Messages
-                {
-                    Message = "Error Please try again.",
-                    type = "Error"
-                };
-                TempData["alertMessage"] = message;
-                return RedirectToAction("Index");
-            } 
-
-        }
-
-        [HttpPost]
-        public ActionResult UpdatePassword()
-        {
-            var userDetails = Session["UserDetails"] as UserDetails;
-            MySqlConnection con = new MySqlConnection(cs);
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand("spRegister", con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("CUSTOMER_ID", userDetails.ID DBNull.Value);
-                cmd.Parameters.AddWithValue("FIRSTNAME", Request.Form["firstname"]);
-                cmd.Parameters.AddWithValue("LASTNAME", Request.Form["lastname"]);
-                cmd.Parameters.AddWithValue("USERNAME", Request.Form["username"]);
-                cmd.Parameters.AddWithValue("PASSWRD", Request.Form["password"]);
-                cmd.Parameters.AddWithValue("EMAIL", Request.Form["email"]);
-                cmd.Parameters.AddWithValue("PHONE", Request.Form["phone"]);
-                cmd.Parameters.AddWithValue("SEX", Request.Form["sex"]);
-                con.Open();
-                var cron = cmd.ExecuteNonQuery();
-                if (cron > 0)
-                {
-                    var msg = new Messages
-                    {
-                        Message = "Registration Successful. Please login.",
-                        type = "success"
-                    };
-                    TempData["alertMessage"] = msg;
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    var msg = new Messages
-                    {
-                        Message = "Registration failed. Please Try Again.",
-                        type = "failed"
-                    };
-                    TempData["alertMessage"] = msg;
-                    return RedirectToAction("Index");
-                }
-
-            }
-            catch (Exception)
-            {
-                var msg = new Messages
-                {
-                    Message = "Registration failed. Please Try Again.",
-                    type = "error"
-                };
-                TempData["alertMessage"] = msg;
-                return RedirectToAction("Index");
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
-        [HttpPost]
-        public void UpdateProfile()
-        {
-            var userDetails = Session["UserDetails"] as UserDetails;
-            MySqlConnection con = new MySqlConnection(cs);
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand("spRegister", con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("CUSTOMER_ID", userDetails.ID);
-                cmd.Parameters.AddWithValue("FIRSTNAME", Request.Form["firstname"]);
-                cmd.Parameters.AddWithValue("LASTNAME", Request.Form["lastname"]);
-                cmd.Parameters.AddWithValue("USERNAME", DBNull.Value);
-                cmd.Parameters.AddWithValue("PASSWRD", DBNull.Value);
-                cmd.Parameters.AddWithValue("EMAIL", DBNull.Value);
-                cmd.Parameters.AddWithValue("PHONE", Request.Form["phone"]);
-                cmd.Parameters.AddWithValue("SEX", Request.Form["sex"]);
-                con.Open();
-                var cron = cmd.ExecuteNonQuery();
-                if (cron > 0)
-                {
-                    var msg = new Messages
-                    {
-                        Message = "Update Successful.",
-                        type = "success"
-                    };
-                    TempData["alertMessage"] = msg;
-                    var user = new UserDetails
-                    {
-
-                    }
-                }
-                else
-                {
-                    var msg = new Messages
-                    {
-                        Message = "Update failed. Please Try Again.",
-                        type = "failed"
-                    };
-                    TempData["alertMessage"] = msg;
-                }
-
-            }
-            catch (Exception)
-            {
-                var msg = new Messages
-                {
-                    Message = "Updaate failed. Please Try Again.",
-                    type = "error"
-                };
-                TempData["alertMessage"] = msg;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-        public ActionResult Logout()
-        {
-            Session.Clear();
-            return View("Index");
-        }
-
+       
         public ActionResult Logins(string email, string password)
         {
             var user = new UserDetails()
@@ -358,10 +99,241 @@ namespace EWebStore.Controllers
             ViewData["Transaction"] = result;
             return View();
         }
-        public new ActionResult Profile(int? id)
+        
+        public new ActionResult Profile()
         {
             //if userid exists then show else throw a forbidden error message
-            return View();
+            if (TempData["alertMessage"] != null)
+            {
+                var msg = TempData["alertMessage"] as Messages;
+                ViewBag.msg = msg;
+            }
+            if (Session["UserDetails"] is null)
+            {
+                return View("Index");
+            }
+            else
+            {
+                var userDetails = Session["UserDetails"] as UserDetails;
+                MySqlConnection con = new MySqlConnection(cs);
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand("spAddress", con);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("ADDRESS_ID", DBNull.Value);
+                    cmd.Parameters.AddWithValue("TRANSID", DBNull.Value);
+                    cmd.Parameters.AddWithValue("CUSTOMER_ID", userDetails.ID);
+                    cmd.Parameters.AddWithValue("ADDRESS", DBNull.Value);
+                    cmd.Parameters.AddWithValue("CITY", DBNull.Value);
+                    cmd.Parameters.AddWithValue("STATE", DBNull.Value);
+                    cmd.Parameters.AddWithValue("CODES", DBNull.Value);
+                    con.Open();
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        string firstColumn = reader.GetName(0).ToString();
+                        if (firstColumn == "MSG")
+                        {
+                            var messages = new Messages
+                            {
+                                Message = "Error",
+                                type = "Error"
+                            };
+                            TempData["alertMessage"] = messages;
+                            return View();
+                        }
+                        else
+                        {
+                            var addresses = new List<AddressList>();
+                            while (reader.Read())
+                            {
+                                // get the list of addresses associated with the customer
+                                var addresslist = new AddressList()
+                                {
+                                    id = int.Parse(reader["address_ID"].ToString()),
+                                    line = reader["address_line"].ToString(),
+                                    city = reader["town_city"].ToString(),
+                                    state = reader["state"].ToString(),
+                                    code = int.Parse(reader["post_zip_code"].ToString())
+                                };
+                                addresses.Add(addresslist);
+                                Session["AddressList"] = addresses;
+                            }
+                            return View();
+                        }
+                    }
+                    return View();
+                }
+                catch (Exception)
+                {
+                    var message = new Messages
+                    {
+                        Message = "Error Please try again.",
+                        type = "Error"
+                    };
+                    ViewBag.msg = message;
+                    return View();
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }   
+        }
+
+        public ActionResult Address(int? id)
+        {
+            //var addressList = Session["AddressList"] as AddressList;
+            var userDetails = Session["UserDetails"] as UserDetails;
+            MySqlConnection con = new MySqlConnection(cs);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("spAddress", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("ADDRESS_ID", id);
+                cmd.Parameters.AddWithValue("TRANSID", DBNull.Value);
+                cmd.Parameters.AddWithValue("CUSTOMER_ID", userDetails.ID);
+                cmd.Parameters.AddWithValue("ADDRESS", Request.Form["line"]);
+                cmd.Parameters.AddWithValue("CITY", Request.Form["city"]);
+                cmd.Parameters.AddWithValue("STATE", Request.Form["state"]);
+                cmd.Parameters.AddWithValue("CODES", Request.Form["code"]);
+                con.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string firstrow = reader.GetName(0).ToString();
+                    //reader.HasRows;
+                    string firstColumn = reader.GetName(0).ToString();
+                    if (firstColumn == "MSG")
+                    {
+                        var messages = new Messages
+                        {
+                            Message = "Error",
+                            type = "Error"
+                        };
+                        TempData["alertMessage"] = messages;
+                        return View();
+                    }
+                    else
+                    //address_ID	customer_ID	address_line	town_city	state	post_zip_code
+                    {
+                        // get the list of addresses associated with the customer
+                        var addresslist = new AddressList()
+                        {
+                            id = int.Parse(reader["address_ID"].ToString()),
+                            line = reader["address_line"].ToString(),
+                            city = reader["town_city"].ToString(),
+                            state = reader["state"].ToString(),
+                            code = int.Parse(reader["post_zip_code"].ToString())
+                        };
+                        Session["AddressList"] = addresslist;
+                        return View();
+                    }
+                }
+
+                var message = new Messages
+                {
+                    Message = "Error Please try again.",
+                    type = "Error"
+                };
+                TempData["alertMessage"] = message;
+                return View();
+
+            }
+            catch (Exception)
+            {
+                var message = new Messages
+                {
+                    Message = "Error Please try again.",
+                    type = "Error"
+                };
+                TempData["alertMessage"] = message;
+                return View();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+    
+        [HttpDelete]
+        public ActionResult AddressDelete(int id)
+        {
+            var userDetails = Session["UserDetails"] as UserDetails;
+            MySqlConnection con = new MySqlConnection(cs);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("spAddress", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("ADDRESS_ID", id);
+                cmd.Parameters.AddWithValue("TRANSID", DBNull.Value);
+                cmd.Parameters.AddWithValue("CUSTOMER_ID", userDetails.ID);
+                cmd.Parameters.AddWithValue("ADDRESS", DBNull.Value);
+                cmd.Parameters.AddWithValue("CITY", DBNull.Value);
+                cmd.Parameters.AddWithValue("STATE", DBNull.Value);
+                cmd.Parameters.AddWithValue("CODES", DBNull.Value);
+                con.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string firstrow = reader.GetName(0).ToString();
+                    //reader.HasRows;
+                    string firstColumn = reader.GetName(0).ToString();
+                    if (firstColumn == "MSG")
+                    {
+                        var messages = new Messages
+                        {
+                            Message = "Error",
+                            type = "Error"
+                        };
+                        ViewBag.msg = messages;
+                        return View();
+                    }
+                    else
+                    {
+                        // get the list<addresses> associated with the customer
+                        var addresslist = new AddressList()
+                        {
+                            id = int.Parse(reader["address_ID"].ToString()),
+                            line = reader["address_line"].ToString(),
+                            city = reader["town_city"].ToString(),
+                            state = reader["state"].ToString(),
+                            code = int.Parse(reader["post_zip_code"].ToString())
+                        };
+                        Session["AddressList"] = addresslist;
+                        var messages = new Messages
+                        {
+                            Message = "Operation successful.",
+                            type = "success"
+                        };
+                        ViewBag.msg = messages;
+                        return View();
+                    }
+                }
+
+                var message = new Messages
+                {
+                    Message = "Error Please try again.",
+                    type = "Error"
+                };
+                ViewBag.msg = message;
+                return View();
+
+            }
+            catch (Exception)
+            {
+                var message = new Messages
+                {
+                    Message = "Error Please try again.",
+                    type = "Error"
+                };
+                ViewBag.msg = message;
+                return View();
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }

@@ -104,6 +104,34 @@
                 </div>
             </div>
             <!----Login modal end -->
+             <!----question modal begin -->
+            <form class="col-4" method="delete" role="form" action="~/Home/AddressDelete">
+                <div class="modal fade" style="overflow:hidden" tabindex="-1" role="dialog" aria-labelledby="questionModalTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="questionModalTitle">Delete </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>Are you sure you want to delete this item?</h5>
+                                <div class="modal-footer" id="modal-footer">
+                                    <button type="button" class="btn btn-info mt-2" style="padding-right:45px; padding-left:45px;" name="cancel" data-dismiss="modal"
+                                            aria-label="Close">
+                                        No
+                                    </button>
+
+                                    <input type="hidden" name="@(Request.QueryString[1])">
+                                    <button type="submit" style="padding-right:25px; padding-left:25px;" class="btn btn-info mt-2">delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!----question modal end -->
             <!----Registration modal begin -->
             <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
